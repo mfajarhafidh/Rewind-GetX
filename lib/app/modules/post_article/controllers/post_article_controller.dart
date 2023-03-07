@@ -1,20 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class PostArticleController extends GetxController {
-  //TODO: Implement PostArticleController
+  FocusNode nodeTwo = FocusNode();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void changeFocus() {
+    nodeTwo.requestFocus();
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
