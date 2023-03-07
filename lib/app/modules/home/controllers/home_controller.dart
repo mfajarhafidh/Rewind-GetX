@@ -1,8 +1,28 @@
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
+import 'package:rewind_api/app/modules/home/models/list_articles_model.dart';
+import 'package:rewind_api/app/modules/home/services/list_articles_service.dart';
 
 class HomeController extends GetxController {
-  List<String> list1 = ['ini 1', 'ini2', 'ini3', 'ini4 deh', 'tambah 1 ah'];
-  List<String> list2 = ['ini 1', 'ini2', 'ini3123122222222222', 
-  'ini 4 brooooooooooooooooooooooooooooooooooooooooooobrooooooooooooooooooooooooooooooooooooooooooobrooooooooooooooooooooooooooooooooooooooooooo',
-  'hehe ini ke 5'];
+  RxBool isLoading = false.obs;
+  RxList<NewsModel> listNewsModel = <NewsModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    getListAllArticles();
+  }
+
+  Future<void> getListAllArticles() async{
+    isLoading.toggle();
+    try{
+      final response = await ListArticlesService().getListArticles();
+      Logger().d(response.length);
+      listNewsModel.addAll(response);
+      isLoading.toggle();
+    } catch(e){
+      isLoading.toggle();
+      Get.snackbar("Error", e.toString());
+    }
+  }
 }
