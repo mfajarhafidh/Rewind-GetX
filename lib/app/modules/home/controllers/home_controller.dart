@@ -1,20 +1,8 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  List<String> list1 = ['ini 1', 'ini2', 'ini3', 'ini4 deh', 'tambah 1 ah'];
+  List<String> list2 = ['ini 1', 'ini2', 'ini3123122222222222', 
+  'ini 4 brooooooooooooooooooooooooooooooooooooooooooobrooooooooooooooooooooooooooooooooooooooooooobrooooooooooooooooooooooooooooooooooooooooooo',
+  'hehe ini ke 5'];
 }
