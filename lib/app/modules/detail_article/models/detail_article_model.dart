@@ -1,8 +1,3 @@
-// To parse this JSON data, do
-//
-//     final detailNewsModel = detailNewsModelFromJson(jsonString);
-
-import 'package:meta/meta.dart';
 import 'dart:convert';
 
 DetailNewsModel detailNewsModelFromJson(String str) => DetailNewsModel.fromJson(json.decode(str));

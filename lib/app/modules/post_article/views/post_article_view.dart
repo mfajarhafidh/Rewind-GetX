@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 import 'package:get/get.dart';
 import 'package:rewind_api/app/modules/post_article/widgets/text_field_widget.dart';
-import 'package:rewind_api/app/shared/color_scheme/color_scheme.dart';
 import 'package:rewind_api/app/shared/text_style/text_style.dart';
 
 import '../controllers/post_article_controller.dart';

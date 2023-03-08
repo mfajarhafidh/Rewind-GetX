@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:rewind_api/app/modules/home/controllers/home_controller.dart';
 import 'package:rewind_api/app/routes/app_pages.dart';
 import 'package:rewind_api/app/shared/color_scheme/color_scheme.dart';
 import 'package:rewind_api/app/shared/text_style/text_style.dart';

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:rewind_api/app/modules/home/models/list_articles_model.dart';
 
 class ListArticlesService {

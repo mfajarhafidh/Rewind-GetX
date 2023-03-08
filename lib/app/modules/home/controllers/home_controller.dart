@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:rewind_api/app/modules/home/models/list_articles_model.dart';
 import 'package:rewind_api/app/modules/home/services/list_articles_service.dart';
 
@@ -17,8 +16,8 @@ class HomeController extends GetxController {
     isLoading.toggle();
     try{
       final response = await ListArticlesService().getListArticles();
-      Logger().d(response.length);
-      listNewsModel.addAll(response);
+      final reservedResponse = response.reversed;
+      listNewsModel.addAll(reservedResponse);
       isLoading.toggle();
     } catch(e){
       isLoading.toggle();

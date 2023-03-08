@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:rewind_api/app/modules/detail_article/models/detail_article_model.dart';
 import 'package:rewind_api/app/modules/detail_article/services/detail_article_service.dart';
-import 'package:rewind_api/app/modules/home/models/list_articles_model.dart';
 
 class DetailArticleController extends GetxController {
   RxBool isLoading = false.obs;

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 import 'package:rewind_api/app/modules/home/widgets/list_tile_articles_widget.dart';
 import 'package:rewind_api/app/routes/app_pages.dart';
 import 'package:rewind_api/app/shared/color_scheme/color_scheme.dart';
