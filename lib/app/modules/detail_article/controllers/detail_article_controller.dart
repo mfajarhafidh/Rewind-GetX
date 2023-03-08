@@ -10,10 +10,7 @@ class DetailArticleController extends GetxController {
 
   @override
   void onInit() {
-    // final id = Get.arguments['id'];
-    // Get.arguments['id'];
-    final args = Get.arguments;
-    id = args['id'];
+    id = Get.arguments['id'];
     getDetailArticle();
     super.onInit();
   }
