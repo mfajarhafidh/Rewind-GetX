@@ -1,20 +1,27 @@
 import 'package:get/get.dart';
+import 'package:rewind_api/app/modules/home/models/list_articles_model.dart';
+import 'package:rewind_api/app/modules/home/services/list_articles_service.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
+  RxBool isLoading = false.obs;
+  RxList<NewsModel> listNewsModel = <NewsModel>[].obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+    getListAllArticles();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Future<void> getListAllArticles() async{
+    isLoading.toggle();
+    try{
+      final response = await ListArticlesService().getListArticles();
+      final reservedResponse = response.reversed;
+      listNewsModel.addAll(reservedResponse);
+      isLoading.toggle();
+    } catch(e){
+      isLoading.toggle();
+      Get.snackbar("Error", e.toString());
+    }
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
