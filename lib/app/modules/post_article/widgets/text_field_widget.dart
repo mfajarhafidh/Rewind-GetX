@@ -18,6 +18,8 @@ class TextFieldWidget extends GetView<PostArticleController> {
         Text("Judul", style: headline3),
         Gap(10),
         TextField(
+          style: headline1,
+          controller: controller.title,
           onSubmitted: (value) => controller.changeFocus(),
           decoration: InputDecoration(
               filled: true,
@@ -30,6 +32,8 @@ class TextFieldWidget extends GetView<PostArticleController> {
         Text("Content Article", style: headline3),
         Gap(10),
         TextField(
+          style: headline3.copyWith(fontWeight: FontWeight.w400),
+          controller: controller.desc,
           focusNode: controller.nodeTwo,
           decoration: InputDecoration(
               filled: true,
@@ -46,17 +50,18 @@ class TextFieldWidget extends GetView<PostArticleController> {
   }
 
   Widget btnPost() {
-    return GestureDetector(
-      onTap: (){},
-      child: Container(
-        width: Get.width,
-        padding: EdgeInsets.symmetric(horizontal: 125, vertical: 19),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: colorFillContainer
-        ),
-        child: Text("Post", style: headline1),
-      ),
-    );
+    return Obx(() => GestureDetector(
+          onTap: () => controller.postArticleController(),
+          child: Container(
+            width: Get.width,
+            padding: EdgeInsets.symmetric(horizontal: 125, vertical: 19),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: colorFillContainer),
+            child: controller.isLoading.value
+                ? CircularProgressIndicator()
+                : Center(child: Text("Post", style: headline1)),
+          ),
+        ));
   }
 }
